@@ -49,7 +49,7 @@ def single_type_candy_count(filename):
     return candyCount
 
 def reflections_and_projections(points):
-    rotArr = np.array([[0, 1], [-1, 0]])
+    rotArr = np.array([[0, -1], [1, 0]])
     projArr = np.array([[1, 3], [3, 9]])
     for n in range(len(points)):
         points[n][1] = -(points[n][1] - 2)
@@ -62,5 +62,5 @@ def normalize(image):
     return image
 
 def sigmoid_normalize(image, a):
-    image = 255 * ((1 + np.e**((-(a)**(-1)) * (image - 128))))**(-1)
+    image = 255 * (((1 + np.e**((-(a)**(-1)) * (image - 128))))**(-1))
     return image
